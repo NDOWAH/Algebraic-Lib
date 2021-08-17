@@ -1,4 +1,6 @@
 from decimal import Decimal, getcontext
+# from typing_extensions import TypeVarTuple
+from vectoralgebra import *
 import vectoralgebra
 getcontext().prec = 30
 
@@ -96,3 +98,9 @@ class Line(object):
 class MyDecimal(Decimal):
     def is_near_zero(self, eps=1e-10):
         return abs(self) < eps
+
+    def parallel_lines(self,line): 
+        if vectoralgebra.is_parallel_to == True:
+            return "The lines are parallel"
+        else:
+            return "The lines are not parallel."
